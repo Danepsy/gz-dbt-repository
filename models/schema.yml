@@ -8,6 +8,12 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: all sales
+        columns:
+          - name: products_id
+            description: primary key
+        tests:
+          - unique
+          - not_null
       - name: product
         identifier: raw_gz_product
         description: all product types
@@ -17,10 +23,6 @@ sources:
             tests:
               - unique
               - not_null               
-          - name: purchase_price
-            tests:
-              - unique
-              - not_null
       - name: ship
         identifier: raw_gz_ship
         description: all shipping information
